@@ -1,0 +1,7 @@
+<ul class="row list-unstyled">
+    <li ng-repeat="user in users" class="col-lg-3">
+        <a ng-href="#/users/{{user | lowercase}}" class="thumbnail">
+            <img ng-src="http://placehold.it/300?text={{user}}" class="img-circle"/>
+        </a>
+    </li>
+</ul>

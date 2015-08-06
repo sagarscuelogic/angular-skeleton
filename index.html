@@ -3,42 +3,41 @@
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="tandem" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app/app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#/users">Users</a></li>
-  </ul>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AngularJS Rouring Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+        <link rel="stylesheet" href="app/app.css">
+        <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <nav-bar></nav-bar>
+        <div class="container">
+            <h1 class="page-header">AngularJS Routing Demo</h1>
+            <div ng-view></div>
 
+            <script src="bower_components/angular/angular.js"></script>
+            <script src="bower_components/angular-route/angular-route.js"></script>
+            <script src="bower_components/angular-resource/angular-resource.js"></script>
 
-  <div ng-view></div>
+            <!-- Common files to be loaded first -->
+            <script src="app/common/controllers.js"></script>
+            <script src="app/common/directives/index.js"></script>
+            <script src="app/common/services/user.js"></script>
+            <script src="app/common/services/index.js"></script>
 
-  <div>Angular seed app: v<span app-version></span></div>
+            <!-- User module -->
+            <script src="app/user/user.controller.js"></script>
+            <script src="app/user/user.route.js"></script>
+            <script src="app/user/index.js"></script>
 
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  
-  <!-- Common files to be loaded first -->
-  <script src="app/common/directives/index.js"></script>
-  <script src="app/common/services/user.js"></script>
-  <script src="app/common/services/index.js"></script>
-
-  <!-- User module -->
-  <script src="app/user/user.controller.js"></script>
-  <script src="app/user/user.route.js"></script>
-  <script src="app/user/index.js"></script>
-  
-  <!-- Main module -->
-  <script src="app/app.js"></script>
-
-</body>
+            <!-- Main module -->
+            <script src="app/app.js"></script>
+        </div>
+    </body>
 </html>

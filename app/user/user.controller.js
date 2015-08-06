@@ -1,6 +1,10 @@
 angular.module('user.controller',['services'])
-      .controller('userCtrl',['$scope','userService',UserController])
+      .controller('userCtrl',['$scope', '$log', '$routeParams', 'userService',UserController])
 
-function UserController($scope,userService) {
+function UserController($scope, $log, $routeParams, userService) {
   $scope.users = userService.get();
+  
+  $log.log(userService.getDetails($routeParams.userId ? $routeParams.userId : null ));
+  
+  $scope.userDetails = userService.getDetails($routeParams.userId ? $routeParams.userId : null );
 };
