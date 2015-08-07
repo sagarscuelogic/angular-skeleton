@@ -4,6 +4,7 @@
 angular.module('tandem', [
     'ngRoute',
     'directives',
+    'filters',
     'commonControllers',
     'user'
 ]).
